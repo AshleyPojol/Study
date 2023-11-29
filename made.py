@@ -650,7 +650,7 @@ def show_pearson_topic():
 
 
 root = tk.Tk()
-style = ttk.Style("morph")
+style = ttk.Style("superhero")
 
 root.title("Course Helper")
 root.geometry('750x500')
