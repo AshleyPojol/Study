@@ -107,10 +107,6 @@ def hide_all_interfaces():
     pearson_frame.pack_forget()
 
 
-
-
-
-
 registered_username = None
 registered_password = None
 
@@ -204,6 +200,7 @@ def connect_database():
 
 
 def quizDifferential():
+    subject_frame.pack()
     global quizDC, vars
 
     quizDC = tk.Toplevel(root)
@@ -247,12 +244,12 @@ def quizDifferential():
             if selected_answer == correct_answers_differential[i]:
                 score += 1
         messagebox.showinfo("Quiz Result", f"Your score is: {score}/{len(differential_questions)}")
-        show_subject_interface()
+        
 
     submit_button = ttk.Button(quizDC, text="Submit", command=calculateScore)
     submit_button.pack(pady=15)
 
-    back_button = ttk.Button(quizDC, text="Back to Subjects", command=show_subject_interface)
+    back_button = ttk.Button(quizDC, text="Back to Subjects", command=subject_frame.pack)
     back_button.pack(pady=15)
 
 
@@ -1061,8 +1058,7 @@ integration_lbl = ttk.Label(integration_frame, image=img)
 integration_lbl.image = img
 integration_lbl.pack(pady=15)
 
-back_btn = ttk.Button(integration_frame, text="Back to Login", style="primary-outline", command=show_topicic_interface,
-                      width=25)
+back_btn = ttk.Button(integration_frame, text="Back to Login", style="primary-outline", command=show_topicic_interface, width=25)
 back_btn.pack(pady=15)
 
 # IC : Exponential Function
@@ -1070,39 +1066,37 @@ back_btn.pack(pady=15)
 exponential_lbl = ttk.Label(exponential_frame, text="Exponential Function", style="default", font=("Calibri Light", 20))
 exponential_lbl.pack(pady=15)
 
-exponential_lbl = ttk.Label(exponential_frame, text="Exponential Function Formula", style="default",
-                            font=("Calibri Light", 20), wraplength=400)
+exponential_lbl = ttk.Label(exponential_frame, text="Exponential Function Formula", style="default", font=("Calibri Light", 20), wraplength=400)
 exponential_lbl.pack(pady=15)
 
 image_path = "images/ex.png"
 img = tk.PhotoImage(file=image_path)
+tri_lbl = ttk.Label(exponential_frame, image=img)
+tri_lbl.image = img
+tri_lbl.pack(pady=15)
 
-exponential_lbl = ttk.Label(exponential_frame, image=img)
-exponential_lbl.image = img
-exponential_lbl.pack(pady=15)
-
-exponential_lbl = ttk.Label(exponential_frame, text="Sample Problem", style="default", font=("Calibri Light", 20))
+exponential_lbl = ttk.Label(exponential_frame, text="Sample Problem", style="default", font=("Calibri Light", 20), wraplength=400)
 exponential_lbl.pack(pady=15)
 
 image_path = "images/ex1.png"
 img = tk.PhotoImage(file=image_path)
-exponential_lbl = ttk.Label(exponential_frame, image=img)
-exponential_lbl.image = img
-exponential_lbl.pack(pady=15)
+tri_lbl = ttk.Label(exponential_frame, image=img)
+tri_lbl.image = img
+tri_lbl.pack(pady=15)
 
 image_path = "images/ex2.png"
 img = tk.PhotoImage(file=image_path)
-exponential_lbl = ttk.Label(exponential_frame, image=img)
-exponential_lbl.pack(pady=15)
+tri_lbl = ttk.Label(exponential_frame, image=img)
+tri_lbl.image = img
+tri_lbl.pack(pady=15)
 
 image_path = "images/ex3.png"
 img = tk.PhotoImage(file=image_path)
-exponential_lbl = ttk.Label(exponential_frame, image=img)
-exponential_lbl.pack(pady=15)
+tri_lbl = ttk.Label(exponential_frame, image=img)
+tri_lbl.image = img
+tri_lbl.pack(pady=15)
 
-back_btn = ttk.Button(exponential_frame, text="Back to Login", style="primary-outline",
-                      command=show_topicic_interface(),
-                      width=25)
+back_btn = ttk.Button(exponential_frame, text="Back to Login", style="primary-outline", command=show_topicic_interface, width=25)
 back_btn.pack(pady=15)
 
 # IC : Trigonometric Function
@@ -1220,8 +1214,38 @@ power_lbl.pack(pady=15)
 power_lbl = ttk.Label(power_frame, text="Power Reduction Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 power_lbl.pack(pady=15)
 
+image_path = "images/p1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(power_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/p2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(power_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 power_lbl = ttk.Label(power_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 power_lbl.pack(pady=15)
+
+image_path = "images/p3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(power_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/p4.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(power_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/p5.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(power_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 back_btn = ttk.Button(power_frame, text="Back to Login", style="primary-outline", command=show_topicic_interface, width=25)
 back_btn.pack(pady=15)
@@ -1234,8 +1258,20 @@ perm_lbl.pack(pady=15)
 perm_lbl = ttk.Label(permutation_frame, text="Permutation Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 perm_lbl.pack(pady=15)
 
+image_path = "images/q.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(permutation_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 perm_lbl = ttk.Label(permutation_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 perm_lbl.pack(pady=15)
+
+image_path = "images/q1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(permutation_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 perm_lbl = ttk.Button(permutation_frame, text="Back to Login", style="primary-outline", command=show_topiceda_interface, width=25)
 perm_lbl.pack(pady=15)
@@ -1248,8 +1284,20 @@ comb_lbl.pack(pady=15)
 comb_lbl = ttk.Label(combination_frame, text="Combination Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 comb_lbl.pack(pady=15)
 
+image_path = "images/w.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(combination_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 comb_lbl = ttk.Label(combination_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 comb_lbl.pack(pady=15)
+
+image_path = "images/w1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(combination_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 comb_lbl = ttk.Button(combination_frame, text="Back to Login", style="primary-outline", command=show_topiceda_interface, width=25)
 comb_lbl.pack(pady=15)
@@ -1262,8 +1310,20 @@ math_lbl.pack(pady=15)
 math_lbl = ttk.Label(mathematical_frame, text="Mathematical Expectation Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 math_lbl.pack(pady=15)
 
+image_path = "images/e.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(mathematical_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 math_lbl = ttk.Label(mathematical_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 math_lbl.pack(pady=15)
+
+image_path = "images/e2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(mathematical_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 math_lbl = ttk.Button(mathematical_frame, text="Back to Login", style="primary-outline", command=show_topiceda_interface, width=25)
 math_lbl.pack(pady=15)
@@ -1276,8 +1336,26 @@ odd_lbl.pack(pady=15)
 odd_lbl = ttk.Label(odds_frame, text="Odds Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 odd_lbl.pack(pady=15)
 
+image_path = "images/o.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(odds_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 odd_lbl = ttk.Label(odds_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 odd_lbl.pack(pady=15)
+
+image_path = "images/o2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(odds_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/o3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(odds_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 odd_lbl = ttk.Button(odds_frame, text="Back to Login", style="primary-outline", command=show_topiceda_interface, width=25)
 odd_lbl.pack(pady=15)
@@ -1290,8 +1368,20 @@ mut_lbl.pack(pady=15)
 mut_lbl = ttk.Label(mutually_frame, text="Probability of Mutually Exclusive Events Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 mut_lbl.pack(pady=15)
 
+image_path = "images/mut.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(mutually_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 mut_lbl = ttk.Label(mutually_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 mut_lbl.pack(pady=15)
+
+image_path = "images/mut2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(mutually_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 mut_lbl = ttk.Button(mutually_frame, text="Back to Login", style="primary-outline", command=show_topiceda_interface, width=25)
 mut_lbl.pack(pady=15)
@@ -1304,8 +1394,21 @@ indeut_lbl.pack(pady=15)
 indeut_lbl = ttk.Label(independent_frame, text="Probability of Independent Events Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 indeut_lbl.pack(pady=15)
 
+image_path = "images/ind.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(independent_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 indeut_lbl = ttk.Label(independent_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 indeut_lbl.pack(pady=15)
+
+image_path = "images/ind1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(independent_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 
 indeut_lbl = ttk.Button(independent_frame, text="Back to Login", style="primary-outline", command=show_topiceda_interface, width=25)
 indeut_lbl.pack(pady=15)
@@ -1318,8 +1421,20 @@ solution_lbl.pack(pady=15)
 solution_lbl = ttk.Label(differential_frame, text="Solution  Differential Equation Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 solution_lbl.pack(pady=15)
 
+image_path = "images/l.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(differential_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 solution_lbl = ttk.Label(differential_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 solution_lbl.pack(pady=15)
+
+image_path = "images/l2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(differential_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 solution_lbl = ttk.Button(differential_frame, text="Back to Login", style="primary-outline", command=show_topicde_interface, width=25)
 solution_lbl.pack(pady=15)
@@ -1332,8 +1447,26 @@ seperation_lbl.pack(pady=15)
 seperation_lbl = ttk.Label(seperation_frame, text="Separation of Variables Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 seperation_lbl.pack(pady=15)
 
+image_path = "images/m.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(seperation_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 seperation_lbl = ttk.Label(seperation_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 seperation_lbl.pack(pady=15)
+
+image_path = "images/m1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(seperation_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/m2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(seperation_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 seperation_lbl = ttk.Button(seperation_frame, text="Back to Login", style="primary-outline", command=show_topicde_interface, width=25)
 seperation_lbl.pack(pady=15)
@@ -1346,8 +1479,20 @@ arbit_lbl.pack(pady=15)
 arbit_lbl = ttk.Label(arbitrary_frame, text="Eliminating Arbitrary Constant Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 arbit_lbl.pack(pady=15)
 
+image_path = "images/ar.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(arbitrary_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 arbit_lbl = ttk.Label(arbitrary_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 arbit_lbl.pack(pady=15)
+
+image_path = "images/ar2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(arbitrary_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 arbit_lbl = ttk.Button(arbitrary_frame, text="Back to Login", style="primary-outline", command=show_topicde_interface, width=25)
 arbit_lbl.pack(pady=15)
@@ -1360,8 +1505,20 @@ homo_lbl.pack(pady=15)
 homo_lbl = ttk.Label(homogeneous_frame, text="Homogeneous Differential Equation Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 homo_lbl.pack(pady=15)
 
+image_path = "images/hom2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(homogeneous_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 homo_lbl = ttk.Label(homogeneous_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 homo_lbl.pack(pady=15)
+
+image_path = "images/hom3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(homogeneous_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 homo_lbl = ttk.Button(homogeneous_frame, text="Back to Login", style="primary-outline", command=show_topicde_interface, width=25)
 homo_lbl.pack(pady=15)
@@ -1374,8 +1531,20 @@ exact_lbl.pack(pady=15)
 exact_lbl = ttk.Label(exact_frame, text="Exact Differential Equation Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 exact_lbl.pack(pady=15)
 
+image_path = "images/g.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(exact_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 exact_lbl = ttk.Label(exact_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 exact_lbl.pack(pady=15)
+
+image_path = "images/g2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(exact_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 exact_lbl = ttk.Button(exact_frame, text="Back to Login", style="primary-outline", command=show_topicde_interface, width=25)
 exact_lbl.pack(pady=15)
@@ -1388,8 +1557,38 @@ non_lbl.pack(pady=15)
 non_lbl = ttk.Label(nonexact_frame, text="Non-Exact Differential Equation Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 non_lbl.pack(pady=15)
 
+image_path = "images/f1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(nonexact_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 non_lbl = ttk.Label(nonexact_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 non_lbl.pack(pady=15)
+
+image_path = "images/f2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(nonexact_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/f3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(nonexact_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/f4.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(nonexact_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/f5.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(nonexact_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 non_lbl = ttk.Button(nonexact_frame, text="Back to Login", style="primary-outline", command=show_topicde_interface, width=25)
 non_lbl.pack(pady=15)
@@ -1402,8 +1601,26 @@ mmw_lbl.pack(pady=15)
 mmw_lbl = ttk.Label(fibonacci_frame, text="Fibonacci Sequence Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 mmw_lbl.pack(pady=15)
 
+image_path = "images/v.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(fibonacci_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 mmw_lbl = ttk.Label(fibonacci_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 mmw_lbl.pack(pady=15)
+
+image_path = "images/v2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(fibonacci_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/v3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(fibonacci_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 mmw_lbl = ttk.Button(fibonacci_frame, text="Back to Login", style="primary-outline", command=show_topicmmw_interface, width=25)
 mmw_lbl.pack(pady=15)
@@ -1416,8 +1633,51 @@ func_lbl.pack(pady=15)
 func_lbl = ttk.Label(operations_frame, text="Operations on Functions Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 func_lbl.pack(pady=15)
 
+image_path = "images/k1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(operations_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 func_lbl = ttk.Label(operations_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 func_lbl.pack(pady=15)
+
+image_path = "images/k2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(operations_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/k3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(operations_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/k4.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(operations_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/k5.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(operations_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/k6.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(operations_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/k7.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(operations_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 
 func_lbl = ttk.Button(operations_frame, text="Back to Login", style="primary-outline", command=show_topicmmw_interface, width=25)
 func_lbl.pack(pady=15)
@@ -1430,8 +1690,39 @@ simple_lbl.pack(pady=15)
 simple_lbl = ttk.Label(simple_frame, text="Simple Interest Formula Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 simple_lbl.pack(pady=15)
 
+image_path = "images/z1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(simple_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 simple_lbl = ttk.Label(simple_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 simple_lbl.pack(pady=15)
+
+image_path = "images/z2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(simple_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/z3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(simple_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/z4.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(simple_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/z5.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(simple_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 
 simple_lbl = ttk.Button(simple_frame, text="Back to Login", style="primary-outline", command=show_topicmmw_interface, width=25)
 simple_lbl.pack(pady=15)
@@ -1444,8 +1735,32 @@ mean_lbl.pack(pady=15)
 mean_lbl = ttk.Label(means_frame, text="Tests Concerning Means Formula", style="default", font=("Calibri Light", 20),wraplength=400)
 mean_lbl.pack(pady=15)
 
+image_path = "images/b1.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(means_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
 mean_lbl = ttk.Label(means_frame, text="Sample Problem", style="default", font=("Calibri Light", 20),wraplength=400)
 mean_lbl.pack(pady=15)
+
+image_path = "images/b2.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(means_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/b3.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(means_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
+
+image_path = "images/b4.png"
+img = tk.PhotoImage(file=image_path)
+iTri_lbl = ttk.Label(means_frame, image=img)
+iTri_lbl.image = img
+iTri_lbl.pack(pady=15)
 
 mean_lbl = ttk.Button(means_frame, text="Back to Login", style="primary-outline", command=show_topicmmw_interface, width=25)
 mean_lbl.pack(pady=15)
