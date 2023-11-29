@@ -785,7 +785,7 @@ ttk.Button(subject_frame, text="Differential Equations", style="success-outline"
            width=30).pack(pady=15)
 ttk.Button(subject_frame, text="Mathematics in the Modern World", style="success-outline",
            command=show_topicmmw_interface, width=30).pack(pady=15)
-ttk.Button(subject_frame, text="Logout", style="danger-outline", width=15).pack(pady=20)
+ttk.Button(subject_frame, text="Logout", style="danger-outline",command=show_login_interface ,width=15).pack(pady=20)
 
 # Topic Differential Calculus
 ttk.Button(topicdc_frame, text="Topic 1: Limits", style="success-outline",
